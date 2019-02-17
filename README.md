@@ -4,13 +4,76 @@
 1. [Setup Firebase and Splash Screen](https://youtu.be/7C5jl2CyzBw)
  * Create Firebase
  * Create Splash Screen (first screen for a seconds)
-2. 
- * 
+2. [Create Banner Slider & Comic List](https://youtu.be/VwQNsLxcUvo)
+ * Create Banner Slider
+ * ~18:50
 
 
 ## record
 
+# 2019 / 02 / 17 Sun
+
+* Banner slider
+* reset git soft and cancel recent commit for adding .gitignore file
+
+> Model Package
+
+    Comic.java
+    Chapter.java
+
+> Service Package - PicassoLoadingService.java
+
+    implements ImageLoadingService
+
+> Adapter Package - MySliderAdapter.java
+
+    // Adapter for Banner
+    extends SliderAdapter
+
+> UI layout - activity_main.xml
+
+    SwipeRefreshLayout
+    Vector Asset - 돋보기 icon
+    Slider
+    
+    // layer-list xml file
+    android:backgroud="@drawable/horizontal_line"
+
+    RecyclerView
+
+> layer-list xml
+
+    <layer-list>
+    <item>
+    <shape>
+    <solid/>
+    </shape>
+    </item>
+    <layer-list>
+
+> MainActivity.java
+
+    Slider slider
+    SwipeRefreshLayout swipeRefreshLayout
+    DatabaseReference banners = FirebaseDatabase.getInstance().getReference("Banners")
+    IBannerLoadDone bannerListener
+
+    loadComic()
+    loadBanner()
+
+> Interface
+
+    IBannerLoadDone.java
+
+> Permission - manifests
+
+    INTERNET
+
+
 # 2019 / 02 / 16 Sat
+
+* Splash screen
+
 > setting
 
     [gradle - app]
