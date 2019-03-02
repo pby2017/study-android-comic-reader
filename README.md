@@ -11,6 +11,11 @@
 
 ## record
 
+# 2019 / 03 / 02 Sat
+Review
+1. [Setup Firebase and Splash Screen](https://youtu.be/7C5jl2CyzBw)
+2. [Create Banner Slider & Comic List](https://youtu.be/VwQNsLxcUvo)(~18:50)
+
 # 2019 / 02 / 17 Sun
 
 * Banner slider
