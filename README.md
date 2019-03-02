@@ -15,6 +15,8 @@
 Review
 1. [Setup Firebase and Splash Screen](https://youtu.be/7C5jl2CyzBw)
 2. [Create Banner Slider & Comic List](https://youtu.be/VwQNsLxcUvo)(~18:50)
+ * app:build.gradle
+  * design / bannerslider / picasso / firebase-database / firebase-core 만 사용
 
 # 2019 / 02 / 17 Sun
 
