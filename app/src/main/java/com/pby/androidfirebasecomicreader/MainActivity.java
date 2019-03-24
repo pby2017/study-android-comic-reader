@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements IBannerLoadDone {
 
     // Listener
     private IBannerLoadDone bannerListener;
+    // Dialog
+    private android.app.AlertDialog alertDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,9 +90,22 @@ public class MainActivity extends AppCompatActivity implements IBannerLoadDone {
                 .append(comicList.size())
                 .append(")"));
 
+        if (!swipeRefreshLayout.isRefreshing()) {
+            alertDialog.dismiss();
+        }
     }
 
     private void loadComic() {
+        // show dialog
+        alertDialog = new SpotsDialog.Builder().setContext(this)
+                .setCancelable(false)
+                .setMessage("Please wait...")
+                .build();
+
+        if (swipeRefreshLayout.isRefreshing()) {
+            alertDialog.show();
+        }
+
         comics.addListenerForSingleValueEvent(new ValueEventListener() {
             List<Comic> comicList = new ArrayList<>();
 
