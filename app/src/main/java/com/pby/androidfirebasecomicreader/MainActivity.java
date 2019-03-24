@@ -28,7 +28,7 @@ import java.util.List;
 import dmax.dialog.SpotsDialog;
 import ss.com.bannerslider.Slider;
 
-public class MainActivity extends AppCompatActivity implements IBannerLoadDone {
+public class MainActivity extends AppCompatActivity implements IBannerLoadDone, IComicLoadDone {
 
     private Slider slider;
     private SwipeRefreshLayout swipeRefreshLayout;
@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements IBannerLoadDone {
 
     // Listener
     private IBannerLoadDone bannerListener;
+    private IComicLoadDone comicListener;
+
     // Dialog
     private android.app.AlertDialog alertDialog;
 
@@ -54,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements IBannerLoadDone {
 
         // Init Listener
         bannerListener = this;
+        comicListener = this;
+
 
         slider = (Slider) findViewById(R.id.slider);
         Slider.init(new PicassoLoadingService());
