@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements IBannerLoadDone, 
 
         // Init Database
         banners = FirebaseDatabase.getInstance().getReference("Banners");
+        comics = FirebaseDatabase.getInstance().getReference("Comic");
 
         // Init Listener
         bannerListener = this;
