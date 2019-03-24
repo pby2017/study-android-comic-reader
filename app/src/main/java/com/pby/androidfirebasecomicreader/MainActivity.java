@@ -64,9 +64,37 @@ public class MainActivity extends AppCompatActivity implements IBannerLoadDone {
                 loadComic();
             }
         });
+    @Override
+    public void onComicLoadDoneListener(List<Comic> comicList) {
+        Common.comicList = comicList;
+
+        recyclerComic.setAdapter(new MyComicAdapter(getBaseContext(), comicList));
+
+        textComic.setText(new StringBuilder("NEW COMIC (")
+                .append(comicList.size())
+                .append(")"));
+
     }
 
     private void loadComic() {
+        comics.addListenerForSingleValueEvent(new ValueEventListener() {
+            List<Comic> comicList = new ArrayList<>();
+
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot comicSnapshot : dataSnapshot.getChildren()) {
+                    Comic comic = comicSnapshot.getValue(Comic.class);
+                    comicList.add(comic);
+                }
+
+                comicListener.onComicLoadDoneListener(comicList);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(MainActivity.this, "" + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void loadBanner() {
