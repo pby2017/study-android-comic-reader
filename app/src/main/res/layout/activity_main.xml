@@ -2,7 +2,7 @@
 <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/swipe_to_refresh"
+    android:id="@+id/swipe_refresh"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/txt_comic"
+                android:id="@+id/text_comic"
                 android:text="NEW COMIC (0)"
                 android:background="@drawable/horizontal_line"
                 android:textSize="16sp"

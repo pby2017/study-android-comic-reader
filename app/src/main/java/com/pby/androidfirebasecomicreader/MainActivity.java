@@ -1,9 +1,9 @@
 package com.pby.androidfirebasecomicreader;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -22,14 +22,15 @@ import ss.com.bannerslider.Slider;
 
 public class MainActivity extends AppCompatActivity implements IBannerLoadDone {
 
-    Slider slider;
-    SwipeRefreshLayout swipeRefreshLayout;
+    private Slider slider;
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     // Database
-    DatabaseReference banners, comics;
+    private DatabaseReference banners;
+    private DatabaseReference comics;
 
     // Listener
-    IBannerLoadDone bannerListener;
+    private IBannerLoadDone bannerListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements IBannerLoadDone {
         slider = (Slider) findViewById(R.id.slider);
         Slider.init(new PicassoLoadingService());
 
-        swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_to_refresh);
+        swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
         swipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary,
                 R.color.colorPrimaryDark);
 
@@ -64,6 +65,11 @@ public class MainActivity extends AppCompatActivity implements IBannerLoadDone {
                 loadComic();
             }
         });
+    @Override
+    public void onBannerLoadDoneListener(List<String> banners) {
+        slider.setAdapter(new MySliderAdapter(banners));
+    }
+
     @Override
     public void onComicLoadDoneListener(List<Comic> comicList) {
         Common.comicList = comicList;
@@ -102,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements IBannerLoadDone {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 List<String> bannerList = new ArrayList<>();
-                for(DataSnapshot bannerSnapshot:dataSnapshot.getChildren()){
+                for (DataSnapshot bannerSnapshot : dataSnapshot.getChildren()) {
                     String image = bannerSnapshot.getValue(String.class);
                     bannerList.add(image);
                 }
@@ -113,13 +119,8 @@ public class MainActivity extends AppCompatActivity implements IBannerLoadDone {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(MainActivity.this, ""+databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "" + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-    }
-
-    @Override
-    public void onBannerLoadDoneListener(List<String> banners) {
-        slider.setAdapter(new MySliderAdapter(banners));
     }
 }
