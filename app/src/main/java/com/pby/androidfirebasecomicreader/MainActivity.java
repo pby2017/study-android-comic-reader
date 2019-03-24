@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity implements IBannerLoadDone {
 
     private Slider slider;
     private SwipeRefreshLayout swipeRefreshLayout;
+    private RecyclerView recyclerComic;
+    private TextView textComic;
 
     // Database
     private DatabaseReference banners;
@@ -75,6 +77,15 @@ public class MainActivity extends AppCompatActivity implements IBannerLoadDone {
                 loadComic();
             }
         });
+
+        recyclerComic = (RecyclerView) findViewById(R.id.recycler_comic);
+        recyclerComic.setHasFixedSize(true);
+        recyclerComic.setLayoutManager(new GridLayoutManager(this, 2));
+
+        textComic = (TextView) findViewById(R.id.text_comic);
+
+    }
+
     @Override
     public void onBannerLoadDoneListener(List<String> banners) {
         slider.setAdapter(new MySliderAdapter(banners));
