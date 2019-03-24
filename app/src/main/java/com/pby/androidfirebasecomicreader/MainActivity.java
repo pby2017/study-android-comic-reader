@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -11,13 +14,18 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.pby.androidfirebasecomicreader.Adapter.MyComicAdapter;
 import com.pby.androidfirebasecomicreader.Adapter.MySliderAdapter;
+import com.pby.androidfirebasecomicreader.Common.Common;
 import com.pby.androidfirebasecomicreader.Interface.IBannerLoadDone;
+import com.pby.androidfirebasecomicreader.Interface.IComicLoadDone;
+import com.pby.androidfirebasecomicreader.Model.Comic;
 import com.pby.androidfirebasecomicreader.Service.PicassoLoadingService;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import dmax.dialog.SpotsDialog;
 import ss.com.bannerslider.Slider;
 
 public class MainActivity extends AppCompatActivity implements IBannerLoadDone {
