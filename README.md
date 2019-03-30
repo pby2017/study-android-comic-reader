@@ -1,6 +1,6 @@
 # [following firebase comic reader app edu streaming by EDMT Dev](https://www.youtube.com/channel/UCllewj2bGdqB8U9Ld15INAg)
 ## Recently sample
-![UI image]()
+![UI image](https://github.com/pby2017/study-firebase-comic-reader-app/blob/master/README_image/ComicReader_20190324Sun.gif)
 ## study curriculum
 1. [Setup Firebase and Splash Screen](https://youtu.be/7C5jl2CyzBw)
  * Create Firebase
