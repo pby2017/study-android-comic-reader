@@ -1,5 +1,6 @@
 # [following firebase comic reader app edu streaming by EDMT Dev](https://www.youtube.com/channel/UCllewj2bGdqB8U9Ld15INAg)
-
+## Recently sample
+![UI image](https://github.com/pby2017/study-firebase-comic-reader-app/blob/master/README_image/ComicReader_20190324Sun.gif)
 ## study curriculum
 1. [Setup Firebase and Splash Screen](https://youtu.be/7C5jl2CyzBw)
  * Create Firebase
@@ -7,10 +8,6 @@
 2. [Create Banner Slider & Comic List](https://youtu.be/VwQNsLxcUvo)
  * Create Banner Slider
  * Create Comic RecyclerView
-
-## Recently sample
-![UI image](https://github.com/pby2017/study-firebase-comic-reader-app/blob/master/README_image/ComicReader_20190324Sun.gif)
-
 ## record detail
 * [2019 / 02 / 16 Sat - Develop setting, Create splash screen](https://github.com/pby2017/study-firebase-comic-reader-app/blob/master/README_detail/20190216Sat.md)
 * [2019 / 02 / 17 Sun - Create banner slider](https://github.com/pby2017/study-firebase-comic-reader-app/blob/master/README_detail/20190217Sun.md)
