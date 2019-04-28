@@ -1,4 +1,4 @@
-package com.pby.androidfirebasecomicreader.Service;
+package com.pby.androidfirebasecomicreader.service;
 
 import android.widget.ImageView;
 

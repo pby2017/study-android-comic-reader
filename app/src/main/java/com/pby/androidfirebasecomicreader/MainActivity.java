@@ -14,13 +14,13 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.pby.androidfirebasecomicreader.Adapter.MyComicAdapter;
-import com.pby.androidfirebasecomicreader.Adapter.MySliderAdapter;
-import com.pby.androidfirebasecomicreader.Common.Common;
+import com.pby.androidfirebasecomicreader.adapter.MyComicAdapter;
+import com.pby.androidfirebasecomicreader.adapter.MySliderAdapter;
+import com.pby.androidfirebasecomicreader.common.Common;
 import com.pby.androidfirebasecomicreader.Interface.IBannerLoadDone;
 import com.pby.androidfirebasecomicreader.Interface.IComicLoadDone;
-import com.pby.androidfirebasecomicreader.Model.Comic;
-import com.pby.androidfirebasecomicreader.Service.PicassoLoadingService;
+import com.pby.androidfirebasecomicreader.model.Comic;
+import com.pby.androidfirebasecomicreader.service.PicassoLoadingService;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.pby.androidfirebasecomicreader.Adapter;
+package com.pby.androidfirebasecomicreader.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.pby.androidfirebasecomicreader.Model.Comic;
+import com.pby.androidfirebasecomicreader.model.Comic;
 import com.pby.androidfirebasecomicreader.R;
 import com.squareup.picasso.Picasso;
 

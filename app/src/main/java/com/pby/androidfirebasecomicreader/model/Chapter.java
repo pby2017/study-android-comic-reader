@@ -1,4 +1,4 @@
-package com.pby.androidfirebasecomicreader.Model;
+package com.pby.androidfirebasecomicreader.model;
 
 import java.util.List;
 
