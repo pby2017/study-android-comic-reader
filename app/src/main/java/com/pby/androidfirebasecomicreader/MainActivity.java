@@ -14,11 +14,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.pby.androidfirebasecomicreader.Interface.IBannerLoadDone;
+import com.pby.androidfirebasecomicreader.Interface.IComicLoadDone;
 import com.pby.androidfirebasecomicreader.adapter.MyComicAdapter;
 import com.pby.androidfirebasecomicreader.adapter.MySliderAdapter;
 import com.pby.androidfirebasecomicreader.common.Common;
-import com.pby.androidfirebasecomicreader.Interface.IBannerLoadDone;
-import com.pby.androidfirebasecomicreader.Interface.IComicLoadDone;
 import com.pby.androidfirebasecomicreader.model.Comic;
 import com.pby.androidfirebasecomicreader.service.PicassoLoadingService;
 
@@ -60,12 +60,11 @@ public class MainActivity extends AppCompatActivity implements IBannerLoadDone, 
         comicListener = this;
 
 
-        slider = (Slider) findViewById(R.id.slider);
+        slider = findViewById(R.id.slider);
         Slider.init(new PicassoLoadingService());
 
-        swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
-        swipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary,
-                R.color.colorPrimaryDark);
+        swipeRefreshLayout = findViewById(R.id.swipe_refresh);
+        swipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary, R.color.colorPrimaryDark);
 
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -83,12 +82,11 @@ public class MainActivity extends AppCompatActivity implements IBannerLoadDone, 
             }
         });
 
-        recyclerComic = (RecyclerView) findViewById(R.id.recycler_comic);
+        recyclerComic = findViewById(R.id.recycler_comic);
         recyclerComic.setHasFixedSize(true);
         recyclerComic.setLayoutManager(new GridLayoutManager(this, 2));
 
-        textComic = (TextView) findViewById(R.id.text_comic);
-
+        textComic = findViewById(R.id.text_comic);
     }
 
     @Override
@@ -113,7 +111,8 @@ public class MainActivity extends AppCompatActivity implements IBannerLoadDone, 
 
     private void loadComic() {
         // show dialog
-        alertDialog = new SpotsDialog.Builder().setContext(this)
+        alertDialog = new SpotsDialog.Builder()
+                .setContext(this)
                 .setCancelable(false)
                 .setMessage("Please wait...")
                 .build();

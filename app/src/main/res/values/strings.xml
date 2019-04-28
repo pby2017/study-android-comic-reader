@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AndroidFirebaseComicReader</string>
+    <string name="text_new_comic">NEW COMIC (0)</string>
 </resources>
