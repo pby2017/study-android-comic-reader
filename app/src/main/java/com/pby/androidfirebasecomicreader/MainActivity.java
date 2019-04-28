@@ -14,8 +14,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.pby.androidfirebasecomicreader.Interface.IBannerLoadDone;
-import com.pby.androidfirebasecomicreader.Interface.IComicLoadDone;
+import com.pby.androidfirebasecomicreader.interfaces.IBannerLoadDone;
+import com.pby.androidfirebasecomicreader.interfaces.IComicLoadDone;
 import com.pby.androidfirebasecomicreader.adapter.MyComicAdapter;
 import com.pby.androidfirebasecomicreader.adapter.MySliderAdapter;
 import com.pby.androidfirebasecomicreader.common.Common;
@@ -100,9 +100,7 @@ public class MainActivity extends AppCompatActivity implements IBannerLoadDone, 
 
         recyclerComic.setAdapter(new MyComicAdapter(getBaseContext(), comicList));
 
-        textComic.setText(new StringBuilder("NEW COMIC (")
-                .append(comicList.size())
-                .append(")"));
+        textComic.setText(String.format("NEW COMIC (%d)", comicList.size()));
 
         if (!swipeRefreshLayout.isRefreshing()) {
             alertDialog.dismiss();
